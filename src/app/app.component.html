@@ -2,5 +2,18 @@
   <!-- Highlight Card -->
 
 <span>{{ title }} app is running!</span>
+<ul class= "list-group">
+  <app-premier *ngFor="let myappareil of appareils" [appareilName]="myappareil.name" [appareilStatus]="myappareil.status"> </app-premier>
+  <!-- <app-premier [appareilName]="appareilOne" [appareilStatus]="'eteint'"></app-premier>
+  <app-premier [appareilName]="appareilTwo" [appareilStatus]="'eteint'"></app-premier>
+  <app-premier [appareilName]="appareilThree" [appareilStatus]="'eteint'" ></app-premier>
+  -->
+</ul>
 
-<router-outlet></router-outlet>
+<h2>Mes appareils</h2>
+<p>Mise à jour : {{ lastUpdate | async | date : 'short' | uppercase }} </p>
+
+<button class = "btn btn-success"
+        [disabled]="!isAuth"
+        (click)="onAllumer()">Tout allumer</button>
+
