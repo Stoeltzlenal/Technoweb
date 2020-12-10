@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { PremierService } from './services/premier.service';
 // import { resolve } from 'dns';
 
 @Component({
@@ -6,49 +7,16 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  title = 'Nutrisen';
-  isAuth = false;
-  lastUpdate = new Promise((resolve, reject) => {
-    const date = new Date();
-    setTimeout(
-      () => {
-        resolve(date);
-      }, 2000
-    );
-  });
+export class AppComponent implements OnInit{
 
-  appareilOne = 'machine à laver';
-  appareilTwo = 'grille pain';
-  appareilThree = 'frigo';
+  //appareilOne = 'machine à laver';
+  //appareilTwo = 'grille pain';
+  //appareilThree = 'frigo';
 
-  appareils = [
-    {
-      name: 'frigo',
-      status: 'eteint'
+  constructor(private premierService: PremierService){ }
 
-    },
-    {
-      name: 'four',
-      status: 'allumer'
-    },
-    {
-      name: 'razoir',
-      status: 'eteint'
-
-    }
-
-  ]
-  constructor(){
-    setTimeout(
-      () => {
-        this.isAuth = true;
-      }, 4000
-    );
-  }
-
-  onAllumer() {
-    console.log('on allume tout !');
+  ngOnInit(){
+    this.appareils = this.premierService.appareils;
   }
 
 }
