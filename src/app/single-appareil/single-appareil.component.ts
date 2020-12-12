@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { PremierService } from '/home/isen/Technoweb/Nutrisen/src/app/services/premier.service';
+import { PremierService } from '../services/premier.service';
 
 @Component({
   selector: 'app-single-appareil',

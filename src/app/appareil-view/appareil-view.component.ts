@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { PremierService } from '/home/isen/Technoweb/Nutrisen/src/app/services/premier.service';
+import { PremierService } from '../services/premier.service';
 
 @Component({
   selector: 'app-appareil-view',
