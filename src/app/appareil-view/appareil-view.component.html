@@ -6,7 +6,8 @@
     <app-premier *ngFor="let myappareil of appareils; let i = index"
                   [appareilName] ="myappareil.name"
                   [appareilStatus]="myappareil.status"
-                  [index]="i"> </app-premier>
+                  [index]="i"
+                  [id]="myappareil.id"> </app-premier>
     <!-- <app-premier [appareilName]="appareilOne" [appareilStatus]="'eteint'"></app-premier>
     <app-premier [appareilName]="appareilTwo" [appareilStatus]="'eteint'"></app-premier>
     <app-premier [appareilName]="appareilThree" [appareilStatus]="'eteint'" ></app-premier>
@@ -16,8 +17,7 @@
   <p>Mise à jour : {{ lastUpdate | async | date : 'short' | uppercase }} </p>
 
   <button class = "btn btn-success"
-          [disabled]="!isAuth"
           (click)="onAllumer()">Tout allumer</button>
+          <!-- plus besoin du !Auth pour tout allumer ou étezindre grâce au authguard qui assure que l'utilisateur est authentifié-->
   <button class = "btn btn-danger"
-          [disabled]="!isAuth"
           (click)="onEteindre()"> Tout éteindre</button>

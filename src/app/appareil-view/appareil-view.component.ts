@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { PremierService } from '/home/isen/Technoweb/Nutrisen/src/app/services/premier.service';
 
 @Component({
@@ -8,6 +8,7 @@ import { PremierService } from '/home/isen/Technoweb/Nutrisen/src/app/services/p
 })
 export class AppareilViewComponent implements OnInit {
 
+  @Input() id: number;
   isAuth = false;
 
   lastUpdate = new Promise((resolve, reject) => {

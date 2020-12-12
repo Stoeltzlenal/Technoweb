@@ -12,6 +12,7 @@ export class PremierComponent implements OnInit {
   @Input() appareilName: string;
   @Input() appareilStatus: string;
   @Input() index: number;
+  @Input() id: number;
 
   constructor(private premierService: PremierService ) { }
 

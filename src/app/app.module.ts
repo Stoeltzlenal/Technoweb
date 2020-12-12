@@ -9,13 +9,21 @@ import { PremierService } from './services/premier.service';
 import { AuthComponent } from './auth/auth.component';
 import { AppareilViewComponent } from './appareil-view/appareil-view.component';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthService } from './services/auth.service';
+import { SingleAppareilComponent } from './single-appareil/single-appareil.component';
+import { FourOhFourComponent } from './four-oh-four/four-oh-four.component';
+import { AuthGuard } from './services/auth-guard.service';
 
 //Création des routes pour naviguer entre le component de notre application
 const appRoutes: Routes = [
-  { path: 'appareils', component: AppareilViewComponent},
+  { path: 'appareils', canActivate: [AuthGuard], component: AppareilViewComponent},
   { path: 'auth', component: AuthComponent},
+  { path: 'appareils/:id', canActivate: [AuthGuard], component: SingleAppareilComponent},
   //le path vide correspond à la page racine sinon ça plante
-  { path: '', component:AppareilViewComponent}
+  { path: '', component: AuthComponent},
+  //redirige en cas de mauvais index vers une erreur 404
+  { path: 'not-found', component: FourOhFourComponent},
+  { path: '**', redirectTo: 'not-found'}
 ];
 
 @NgModule({
@@ -24,6 +32,7 @@ const appRoutes: Routes = [
     PremierComponent,
     AuthComponent,
     AppareilViewComponent,
+    FourOhFourComponent,
   ],
   //array imports de app module
   imports: [
@@ -34,6 +43,8 @@ const appRoutes: Routes = [
   ],
   providers: [
     PremierService
+    ,AuthService
+    ,AuthGuard
   ],
   bootstrap: [AppComponent]
 })

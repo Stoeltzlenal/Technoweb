@@ -1,1 +1,4 @@
 <p>auth works!</p>
+<!-- quand !authstatus veut dire que ça valeur est false tandis que authstatus ça valeur est true-->
+<button class="btn btn-success" *ngIf="!authStatus" (click)="onSignIn()">connexion </button>
+<button class="btn btn-danger" *ngIf="authStatus" (click)="onSignOut()" >deconnexion</button>
