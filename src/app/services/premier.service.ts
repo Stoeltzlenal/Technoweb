@@ -1,6 +1,10 @@
+import { Subject } from 'rxjs/Subject';
+
 export class PremierService {
 
-  appareils = [
+  appareilsSubject =  new Subject<any[]>();
+
+  private appareils = [
     {
       id: 1,
       name: 'frigo',
@@ -20,6 +24,10 @@ export class PremierService {
     }
 
   ]
+
+  emitAppareilSubject() {
+    this.appareilsSubject.next(this.appareils.slice());
+  }
 
   switchOnAll() {
     for(let appareil of this.appareils){
