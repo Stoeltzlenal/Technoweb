@@ -13,12 +13,14 @@ import { AuthService } from './services/auth.service';
 import { SingleAppareilComponent } from './single-appareil/single-appareil.component';
 import { FourOhFourComponent } from './four-oh-four/four-oh-four.component';
 import { AuthGuard } from './services/auth-guard.service';
+import { EditAppareilComponent } from './edit-appareil/edit-appareil.component';
 
 //Création des routes pour naviguer entre le component de notre application
 const appRoutes: Routes = [
   { path: 'appareils', canActivate: [AuthGuard], component: AppareilViewComponent},
   { path: 'auth', component: AuthComponent},
   { path: 'appareils/:id', canActivate: [AuthGuard], component: SingleAppareilComponent},
+  { path: 'edit', canActivate: [AuthGuard], component: EditAppareilComponent },
   //le path vide correspond à la page racine sinon ça plante
   { path: '', component: AuthComponent},
   //redirige en cas de mauvais index vers une erreur 404
@@ -33,6 +35,7 @@ const appRoutes: Routes = [
     AuthComponent,
     AppareilViewComponent,
     FourOhFourComponent,
+    EditAppareilComponent,
   ],
   //array imports de app module
   imports: [
