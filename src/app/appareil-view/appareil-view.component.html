@@ -1,0 +1,29 @@
+<p>appareil-view works!</p>
+
+  <!-- Highlight Card -->
+  <h2>Mes appareils</h2>
+  <ul class= "list-group">
+    <app-premier *ngFor="let myappareil of appareils; let i = index"
+                  [appareilName] ="myappareil.name"
+                  [appareilStatus]="myappareil.status"
+                  [index]="i"
+                  [id]="myappareil.id"> </app-premier>
+    <!-- <app-premier [appareilName]="appareilOne" [appareilStatus]="'eteint'"></app-premier>
+    <app-premier [appareilName]="appareilTwo" [appareilStatus]="'eteint'"></app-premier>
+    <app-premier [appareilName]="appareilThree" [appareilStatus]="'eteint'" ></app-premier>
+    -->
+  </ul>
+
+  <p>Mise à jour : {{ lastUpdate | async | date : 'short' | uppercase }} </p>
+
+  <button class = "btn btn-success"
+          (click)="onAllumer()">Tout allumer</button>
+          <!-- plus besoin du !Auth pour tout allumer ou étezindre grâce au authguard qui assure que l'utilisateur est authentifié-->
+  <button class = "btn btn-danger"
+          (click)="onEteindre()"> Tout éteindre</button>
+  
+  <button class="btn btn-primary"
+          (click)="onSave()">Enregistrer les appareils</button>
+  
+  <button class="btn btn-primary"
+          (click)="onFetch()">Récupérer les appareils</button>

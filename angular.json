@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Nutrisen"
+    }
+  },
+  "defaultProject": "Nutrisen",
+  "cli": {
+    "analytics": "c5e1edf0-e56c-4f24-b8b6-66c8532a6449"
+  }
 }
