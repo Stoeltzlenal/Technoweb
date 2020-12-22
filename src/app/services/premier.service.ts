@@ -81,7 +81,7 @@ export class PremierService {
 
   saveAppareilsToServer() {
     this.httpClient
-      .put('https://nutrisen-9c1f9-default-rtdb.europe-west1.firebasedatabase.app/appareils.json', this.appareils)
+      .put('https://api-nutri-default-rtdb.europe-west1.firebasedatabase.app/appareils.json', this.appareils)
       .subscribe(
         () => {
           console.log('Enregistrement terminé !');
@@ -94,7 +94,7 @@ export class PremierService {
 
   getAppareilsFromServer() {
     this.httpClient
-      .get<any[]>('https://nutrisen-9c1f9-default-rtdb.europe-west1.firebasedatabase.app/appareils.json')
+      .get<any[]>('https://api-nutri-default-rtdb.europe-west1.firebasedatabase.app/appareils.json')
       .subscribe(
         (response) => {
           this.appareils = response;
