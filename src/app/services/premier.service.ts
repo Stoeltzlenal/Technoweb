@@ -10,21 +10,11 @@ export class PremierService {
   private appareils = [
     {
       id: 1,
-      name: 'frigo',
-      status: 'eteint'
+      name: 'test',
+      status: 'en_cours'
 
     },
-    {
-      id: 2,
-      name: 'four',
-      status: 'allumer'
-    },
-    {
-      id: 3,
-      name: 'razoir',
-      status: 'eteint'
 
-    }
 
   ];
 
@@ -36,23 +26,23 @@ export class PremierService {
 
   switchOnAll() {
     for(let appareil of this.appareils){
-      appareil.status = 'allumer';
+      appareil.status = 'effectuer';
     }
   }
 
   switchOffAll() {
     for(let appareil of this.appareils){
-      appareil.status= 'eteint';
+      appareil.status= 'en_cours';
     }
   }
 
   switchOnOne(i: number ) {
-    this.appareils[i].status='allumer';
+    this.appareils[i].status='effectuer';
 
   }
 
   switchOffOne(i: number) {
-    this.appareils[i].status='eteint';
+    this.appareils[i].status='en_cours';
 
   }
 
@@ -71,7 +61,7 @@ export class PremierService {
       name: '',
       status: ''
     };
-    
+
     appareilObject.name = name;
     appareilObject.status = status;
     appareilObject.id = this.appareils[(this.appareils.length - 1)].id + 1;

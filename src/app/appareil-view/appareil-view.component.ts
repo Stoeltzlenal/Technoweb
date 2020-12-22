@@ -33,6 +33,10 @@ export class AppareilViewComponent implements OnInit {
       }
     );
     this.premierService.emitAppareilSubject();
+
+
+    //this.premierService.getAppareilsFromServer();
+
   }
 
   onAllumer() {
