@@ -1,20 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
 
-<button class="btn btn-danger" *ngIf="authStatus" (click)="onSignOut()" >deconnexion</button>    
-<div class="wrapper fadeInDown ">
-  <div id="formContent">
-    <!-- Login Form -->
-    <form>
-      <input type="text" id="login" class="fadeIn second" name="login" placeholder="Identifiant">
-      <input type="text" id="password" class="fadeIn third" name="password" placeholder="Mot de passe">
-      <button type="button" class="btn btn-info btn-round btn-lg btn-block" *ngIf="!authStatus" (click)="onSignIn()">connexion </button>
-    </form>
-    
-    <!-- Remind Passowrd -->
-    <div id="formFooter">
-      <a class="underlineHover" href="#">Creer un compte</a>
+<body id="page-top">
+  <!-- Header -->
+  <header class="masthead d-flex">
+    <div class="container text-center my-auto">
+      <h1 class="mb-1">Bienvenue sur ta ToDoList !</h1>
+      <h3 class="mb-5">
+        <em>Tu n'oubliras plus jamais rien avec ToDoL'Isen</em>
+      </h3>
+      <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Connexion</a>
     </div>
+    <div class="overlay"></div>
+  </header>
 
-  </div>
-</div>
+</body>
 
-    
+</html>
