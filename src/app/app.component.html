@@ -3,40 +3,31 @@
     <div class="navbar-collapse">
       <ul class="nav navbar-nav">
         <!-- La balise routerLink au lieu de href permet d'utiliser nos routes et contrairement au href ne recharge pas la page-->
-        <li routerLinkActive="active"><a routerLink="auth">Authentification</a></li>
-        <li routerLinkActive="active"><a routerLink="appareils">Appareils</a></li>
-        <li routerLinkActive="active"><a routerLink="edit">Nouvel appareil</a></li>
+        <li routerLinkActive="active"><a routerLink="auth">Accueil</a></li>
+        <li routerLinkActive="active"><a routerLink="appareils">Recette</a></li>
+        <li routerLinkActive="active"><a routerLink="edit">Nouvelle recette</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li routerLinkActive="active" *ngIf="!isAuth">
+          <a routerLink="auth/signup">Créer un compte</a>
+        </li>
+        <li routerLinkActive="active" *ngIf="!isAuth">
+          <a routerLink="auth/signin">Connexion</a>
+        </li>
+        <li>
+          <a (click)="onSignOut()"
+             style="cursor:pointer"
+             *ngIf="isAuth">Déconnexion</a>
+        </li>
       </ul>
     </div>
-  </div>
-</nav>
-
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <ul class="nav navbar-nav">
-      <li routerLinkActive="active">
-        <a routerLink="books">Livres</a>
-      </li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-      <li routerLinkActive="active" *ngIf="!isAuth">
-        <a routerLink="auth/signup">Créer un compte</a>
-      </li>
-      <li routerLinkActive="active" *ngIf="!isAuth">
-        <a routerLink="auth/signin">Connexion</a>
-      </li>
-      <li>
-        <a (click)="onSignOut()"
-           style="cursor:pointer"
-           *ngIf="isAuth">Déconnexion</a>
-      </li>
-    </ul>
   </div>
 </nav>
 
 <div class="navbar-right">
   <p> Vous êtes connecté depuis {{second}} secondes</p>
 </div>
+
 <!-- On utilise la balise router-outlet pour naviguer entre les component de notre application, les routes sont créé dans app.module
 Pour le moment on doit rentrer le chemin manuellement dans le navigateur ex:http://localhost:4200/auth  -->
 <router-outlet></router-outlet>

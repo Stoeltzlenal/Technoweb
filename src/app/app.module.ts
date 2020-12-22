@@ -27,10 +27,10 @@ import { SigninComponent } from './auth/signin/signin.component';
 
 //Création des routes pour naviguer entre le component de notre application
 const appRoutes: Routes = [
-  { path: 'appareils', /*canActivate: [AuthGuard],*/ component: AppareilViewComponent},
+  { path: 'appareils', canActivate: [AuthGuard], component: AppareilViewComponent},
   { path: 'auth', component: AuthComponent},
-  { path: 'appareils/:id', /*canActivate: [AuthGuard],*/ component: SingleAppareilComponent},
-  { path: 'edit', /*canActivate: [AuthGuard],*/ component: EditAppareilComponent },
+  { path: 'appareils/:id', canActivate: [AuthGuard], component: SingleAppareilComponent},
+  { path: 'edit', canActivate: [AuthGuard], component: EditAppareilComponent },
   { path: 'auth/signup', component: SignupComponent },
   { path: 'auth/signin', component: SigninComponent },
   //le path vide correspond à la page racine sinon ça plante
