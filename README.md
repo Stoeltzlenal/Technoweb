@@ -1,29 +1,31 @@
-# Nutrisen
+## To do isen
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
+Le but de cette application web est de créer ça propre To do list. Toute vos tâches sont sauvegardé en back end dans l'API de firebase. L'authentification pour vous connectez à l'application se fait par email et mot de passe qui sont également gérer par l'api fire base. 
 
-## Development server
+## Etape 1
+Rentrer dans un terminal à la racine du projet les commandes suivantes:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+sudo npm install --save-dev @angular-devkit/build-angular
 
-## Code scaffolding
+sudo npm install firebase @angular/fire
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+puis ng serve
 
-## Build
+## Etape 2
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Dans la page d'accueil créé d'abord un compte. En suite connecté vous.
+Vous pourez accéder à l'onglet To do list qui permet d'afficher la liste des tâches à faire.
+L'onglet NOuvelle tâche permet de créer une nouvelle tâche et l'ajoute à votre TO do list.
+Pour enregistrer vos tâches cliquez sur le bouton Enregistrez mes tâches. Pour supprimer toute vos tâches cliquez sur supprimer et pour les récuperer si vous actualisez l'application cliquez sur récuperer mes tâches.
 
-## Running unit tests
+A chaque utilisation de l'application récuperer bien vos tâches avant d'en créer de nouvelle sinon elles se font écraser dans l'api.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Après utilisation vous pouvez vous déconnecter en appuyant sur le bouton déconnecté.
 
-## Running end-to-end tests
+Vous etes obligé de créer un compte pour accéder à l'application.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Auteur
 
-## Further help
+Alexis STOELTZLEN
+Enzo RAMONE
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-
-#test alexis
