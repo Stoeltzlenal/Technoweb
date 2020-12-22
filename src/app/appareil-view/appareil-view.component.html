@@ -1,6 +1,6 @@
 
   <!-- Highlight Card -->
-  <h2>Mes appareils</h2>
+  <h2>To do list</h2>
   <ul class= "list-group">
     <app-premier *ngFor="let myappareil of appareils; let i = index"
                   [appareilName] ="myappareil.name"
@@ -16,13 +16,16 @@
   <p>Mise à jour : {{ lastUpdate | async | date : 'short' | uppercase }} </p>
 
   <button class = "btn btn-success"
-          (click)="onAllumer()">Tout allumer</button>
+          (click)="onAllumer()">Tout terminer </button>
           <!-- plus besoin du !Auth pour tout allumer ou étezindre grâce au authguard qui assure que l'utilisateur est authentifié-->
   <button class = "btn btn-danger"
-          (click)="onEteindre()"> Tout éteindre</button>
-  
+          (click)="onEteindre()">Tout en cours</button>
+
   <button class="btn btn-primary"
-          (click)="onSave()">Enregistrer les appareils</button>
-  
+          (click)="onSave()">Enregistrer mes tâches</button>
+
   <button class="btn btn-primary"
-          (click)="onFetch()">Récupérer les appareils</button>
+          (click)="onFetch()">Récupérer mes tâches</button>
+
+  <button class="btn btn-danger"
+          (click)="onDelete()"> Supprimer</button>

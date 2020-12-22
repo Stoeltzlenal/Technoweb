@@ -11,7 +11,7 @@ import { PremierService } from '../services/premier.service';
 })
 export class EditAppareilComponent implements OnInit {
 
-  defaultOnOff = 'eteint';
+  defaultOnOff = 'en_cours';
 
   constructor(private premierService: PremierService, private router: Router) { }
 

@@ -24,21 +24,20 @@ export class PremierComponent implements OnInit {
   }
 
   getColor() {
-    if (this.appareilStatus === 'allumer') {
+    if (this.appareilStatus === 'effectuer') {
       return 'green';
     }
 
-    if (this.appareilStatus === 'eteint') {
+    if (this.appareilStatus === 'en_cours') {
       return 'red';
     }
   }
 
   onSwitch() {
-    if (this.appareilStatus === 'allumer'){
+    if (this.appareilStatus === 'effectuer'){
       this.premierService.switchOffOne(this.index);
-    } else if (this.appareilStatus === 'eteint'){
+    } else if (this.appareilStatus === 'en_cours'){
       this.premierService.switchOnOne(this.index);
     }
   }
-
 }

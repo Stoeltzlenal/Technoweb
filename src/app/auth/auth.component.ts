@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { AuthService } from '../services/auth.service';
+/*import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';*/
 
 @Component({
   selector: 'app-auth',
@@ -9,13 +9,13 @@ import { AuthService } from '../services/auth.service';
 })
 export class AuthComponent implements OnInit {
 
-  authStatus: boolean;
-  constructor(private authService: AuthService, private router: Router) { }
+  //authStatus: boolean;
+  constructor(/*private authService: AuthService, private router: Router*/) { }
 
   ngOnInit(): void {
-    this.authStatus= this.authService.isAuth;
+    //this.authStatus= this.authService.isAuth;
   }
-  //lors de la connexion permet de se connecter
+  /*//lors de la connexion permet de se connecter
   onSignIn(){
     this.authService.signIn().then(
       () => {
@@ -30,6 +30,6 @@ export class AuthComponent implements OnInit {
   onSignOut(){
     this.authService.signOut();
     this.authStatus= this.authService.isAuth;
-  }
+  }*/
 
 }
