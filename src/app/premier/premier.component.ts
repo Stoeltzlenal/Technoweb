@@ -40,5 +40,4 @@ export class PremierComponent implements OnInit {
       this.premierService.switchOnOne(this.index);
     }
   }
-
 }

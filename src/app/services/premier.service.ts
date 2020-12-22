@@ -10,7 +10,7 @@ export class PremierService {
   private appareils = [
     {
       id: 1,
-      name: 'test',
+      name: 'model de tâche',
       status: 'en_cours'
 
     },
@@ -89,6 +89,19 @@ export class PremierService {
         (response) => {
           this.appareils = response;
           this.emitAppareilSubject();
+        },
+        (error) => {
+          console.log('Erreur ! : ' + error);
+        }
+      );
+  }
+
+  deleteAppareilsToServer() {
+    this.httpClient
+      .delete<any[]>('https://api-nutri-default-rtdb.europe-west1.firebasedatabase.app/appareils.json' )
+      .subscribe(
+        () => {
+          console.log('Suppression terminé !');
         },
         (error) => {
           console.log('Erreur ! : ' + error);

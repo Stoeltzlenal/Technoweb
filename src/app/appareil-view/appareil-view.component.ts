@@ -34,18 +34,15 @@ export class AppareilViewComponent implements OnInit {
     );
     this.premierService.emitAppareilSubject();
 
-
-    //this.premierService.getAppareilsFromServer();
-
   }
 
   onAllumer() {
     this.premierService.switchOnAll();
-    console.log('on allume tout !');
+    console.log('Met tout en cours!');
   }
 
   onEteindre(){
-    if(confirm('souhaitez vous tout éteindre ?'))
+    if(confirm('souhaitez vous mettre toute vos tâches en cours?'))
     {
       this.premierService.switchOffAll();
       console.log('eteind tous');
@@ -63,5 +60,20 @@ export class AppareilViewComponent implements OnInit {
   onFetch() {
     this.premierService.getAppareilsFromServer();
   }
+
+  onDelete() {
+    if(confirm('Souhaitez vous supprimer toute vos tâches ?'))
+    {
+      this.premierService.deleteAppareilsToServer();
+
+      console.log('supprime tous');
+      window.location.reload();
+
+    }
+    else {
+      return null;
+    }
+  }
+
 
 }
